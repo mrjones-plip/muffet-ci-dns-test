@@ -14,7 +14,7 @@
 # download.docker.com are excluded below) you can add additional sites as needed. Please
 # use extremely granular URLs so as not to exclude more than we need to.
 
-muffet http://localhost:1313 \
+muffet http://docs.communityhealthtoolkit.org \
   --buffer-size 50000 \
   --timeout 10 \
   --concurrency 2 \

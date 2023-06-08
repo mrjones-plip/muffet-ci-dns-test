@@ -31,13 +31,13 @@ jobs:
 #      - name: All Branches - Install npm modules for Hugo
 #        run: npm install
 #
-#      - name: All Branches - Install Go v1.18
-#        uses: actions/setup-go@v2
-#        with:
-#          go-version: '1.18'
+      - name: All Branches - Install Go v1.18
+        uses: actions/setup-go@v2
+        with:
+          go-version: '1.18'
 #
-#      - name: All Branches - Install Muffet v1.5.7
-#        run: GO111MODULE=on go install github.com/raviqqe/muffet@v1.5.7
+      - name: All Branches - Install Muffet v1.5.7
+        run: GO111MODULE=on go install github.com/raviqqe/muffet@v1.5.7
 #
 #      # run in background so CI doesn't hang waiting for "ctrl + c".  Sleep ensures server is ready in next step
 #      - name: All Branches - Serve Hugo site
@@ -48,6 +48,10 @@ jobs:
       - name: Run DNS Test Script
         shell: bash
         run: ./.github/scripts/dns.sh
+
+      - name: Run Muffet
+        shell: bash
+        run: ./.github/scripts/muffet.sh
 
 #      - name: Main Branch Only - Report errors to Slack, if any
 #        if: ${{ github.ref == 'refs/heads/main' && failure() }}
