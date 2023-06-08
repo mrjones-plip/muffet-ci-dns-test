@@ -1,0 +1,62 @@
+# Notes:
+#  - test CI to debug https://github.com/medic/cht-docs/issues/1106
+
+# run on every push
+on: [push]
+
+name: DNS Test
+jobs:
+  BuildLinkCheckPushLive:
+    name:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 15
+    steps:
+
+#      - name: All Branches - Git checkout
+#        uses: actions/checkout@v2
+#        with:
+#          fetch-depth: 0         # Fetch all history for .GitInfo and .Lastmod
+#
+#      - name: All Branches - Install hugo extended v0.101.0
+#        uses: peaceiris/actions-hugo@v2
+#        with:
+#          hugo-version: "0.101.0"
+#          extended: true
+#
+#      - name: All Branches - Install Node 12.x
+#        uses: actions/setup-node@v1
+#        with:
+#          node-version: '12.x'
+#
+#      - name: All Branches - Install npm modules for Hugo
+#        run: npm install
+#
+#      - name: All Branches - Install Go v1.18
+#        uses: actions/setup-go@v2
+#        with:
+#          go-version: '1.18'
+#
+#      - name: All Branches - Install Muffet v1.5.7
+#        run: GO111MODULE=on go install github.com/raviqqe/muffet@v1.5.7
+#
+#      # run in background so CI doesn't hang waiting for "ctrl + c".  Sleep ensures server is ready in next step
+#      - name: All Branches - Serve Hugo site
+#        run: |
+#          hugo server&
+#          sleep 30
+
+      - name: All Branches - Run Muffet link checker
+        shell: bash
+        run: ./.github/scripts/dns.sh
+
+#      - name: Main Branch Only - Report errors to Slack, if any
+#        if: ${{ github.ref == 'refs/heads/main' && failure() }}
+#        uses: rtCamp/action-slack-notify@v2.0.2
+#        env:
+#          SLACK_WEBHOOK: '${{ secrets.SLACK_WEB_HOOK }}'
+#          SLACK_CHANNEL: '#cht-doc-site'
+#          SLACK_COLOR: '#3278BD'
+#          SLACK_ICON: ":flappingphone:"
+#          SLACK_MESSAGE: 'Broken Links Found'
+#          SLACK_TITLE: CHT DOCS BAD LINKS
+#          SLACK_USERNAME: Medic-Bot
