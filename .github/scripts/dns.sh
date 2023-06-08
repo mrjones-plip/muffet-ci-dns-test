@@ -31,3 +31,20 @@ echo
 echo "------------------------"
 echo "calling: sudo nmcli device show "
 sudo nmcli device show
+
+echo
+echo "------------------------"
+echo "calling: systemd-resolve --status "
+systemd-resolve --status
+
+
+echo
+echo "------------------------"
+echo "calling: resolvectl "
+resolvectl
+
+
+echo
+echo "------------------------"
+echo "calling: cat /etc/resolv.conf "
+cat /etc/resolv.conf
