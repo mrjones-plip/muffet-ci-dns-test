@@ -19,7 +19,7 @@ dig local-ip.medicmobile.org  +short @8.8.8.8
 echo
 echo "------------------------"
 echo "installing network-manager and calling 'nmcli device show eth0 | grep DNS''"
-apt update
-apt install network-manager
+sudo apt update
+sudo apt install network-manager
 nmcli device status
 nmcli device show eth0 | grep DNS
