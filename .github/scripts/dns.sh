@@ -46,6 +46,15 @@ echo "------------------------"
 echo "calling: resolvectl status eth0"
 resolvectl status eth0
 
+echo
+echo "------------------------"
+echo "calling: resolvectl dns eth0 9.9.9.9"
+resolvectl dns eth0 9.9.9.9
+
+echo
+echo "------------------------"
+echo "calling: resolvectl status eth0"
+resolvectl status eth0
 
 echo
 echo "------------------------"
