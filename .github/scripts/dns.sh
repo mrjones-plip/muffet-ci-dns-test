@@ -48,8 +48,8 @@ resolvectl status eth0
 
 echo
 echo "------------------------"
-echo "calling: resolvectl dns eth0 9.9.9.9"
-resolvectl dns eth0 9.9.9.9
+echo "calling: sudo resolvectl dns eth0 9.9.9.9"
+sudo resolvectl dns eth0 9.9.9.9
 
 echo
 echo "------------------------"
