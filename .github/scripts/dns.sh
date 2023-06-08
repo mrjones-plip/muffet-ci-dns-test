@@ -43,8 +43,8 @@ dig local-ip.medicmobile.org  +short
 
 echo
 echo "------------------------"
-echo "calling: resolvectl eth0"
-resolvectl eth0
+echo "calling: resolvectl status eth0"
+resolvectl status eth0
 
 
 echo
