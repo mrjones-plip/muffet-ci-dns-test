@@ -29,5 +29,5 @@ sudo nmcli device status
 
 echo
 echo "------------------------"
-echo "calling: sudo nmcli device show eth0 | grep DNS"
-sudo nmcli device show eth0 | grep DNS
+echo "calling: sudo nmcli device show "
+sudo nmcli device show
